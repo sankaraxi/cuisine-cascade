@@ -1,0 +1,28 @@
+{
+  "name": "cusine-cascade",
+  "version": "1.0.0",
+  "description": "A food ordering wb application developed using react",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankaraxi/cusine-cascade.git"
+  },
+  "keywords": [
+    "food",
+    "ordering",
+    "react",
+    "sankar",
+    "gnanasekar",
+    "web",
+    "app"
+  ],
+  "author": "Sankar Gnanasekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sankaraxi/cusine-cascade/issues"
+  },
+  "homepage": "https://github.com/sankaraxi/cusine-cascade#readme"
+}
