@@ -1,9 +1,10 @@
 {
   "name": "cusine-cascade",
   "version": "1.0.0",
-  "description": "A food ordering wb application developed using react",
-  "main": "app.js",
+  "description": "A food ordering web application developed using react",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -24,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/sankaraxi/cusine-cascade/issues"
   },
-  "homepage": "https://github.com/sankaraxi/cusine-cascade#readme"
+  "homepage": "https://github.com/sankaraxi/cusine-cascade#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
 }
