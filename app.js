@@ -2106,7 +2106,7 @@ const resList =[
 ]
 
 
-//not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice)
+//not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
 const Body = () => {
     return (
         <div className='body'>
