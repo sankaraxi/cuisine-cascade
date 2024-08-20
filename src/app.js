@@ -20,16 +20,6 @@ import Body from './components/Body';
  *  - address
  */
 
-
-
-
-
-
-
-
-
-
-
 const AppLayout = () => {
     return (
         <div className='app'>
