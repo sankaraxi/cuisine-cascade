@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import logo from './logo.png';
 
 /** Basic Plan
@@ -38,7 +38,7 @@ const Header = () => {
 };
 
 const styleCard ={
-    backgroundColor: 'f0f0f0',
+    backgroundColor: 'whitesmoke',
 } //inline css
 
 const RestaurantCard = (props) => {
@@ -2105,6 +2105,8 @@ const resList =[
   }
 ]
 
+
+//not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice)
 const Body = () => {
     return (
         <div className='body'>
@@ -2113,7 +2115,7 @@ const Body = () => {
             </div>
             <div className='restau-container'>
                 {resList.map((restaurant) => (
-                    <RestaurantCard resData={restaurant} />
+                    <RestaurantCard key ={restaurant.info.id} resData={restaurant} />
                   ))} 
                 
                 {/* this not a good apporach  */}
