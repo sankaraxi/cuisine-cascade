@@ -141,6 +141,9 @@ const Body = () => {
 
 // useEffect(() => {}, []); // empty array means it will run only once when the component is mounted 
 
+// if no dependency array is given, useeffect will run everytime the component is rendered
+// if empty dependency array is given, useeffect will run only once when the component is mounted
+
     useEffect(() => {
         fetchData();    
     },[]); 
