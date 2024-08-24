@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import logo from './logo.png';
+import { Link } from 'react-router-dom';
 const Header = () => {
     const [btnValue,setBtnValue] = useState('Login');
 
@@ -10,9 +11,16 @@ const Header = () => {
             </div>
             <div className='nav-items'>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li>
+                        <Link to='/'>Home</Link>
+                    </li>
+                    <li>
+                        {/* <a href='/about'>About</a> this will reload the page */}
+                        <Link to='/about'>About</Link> {/* this will not reload the page */}
+                    </li>
+                    <li>
+                        <Link to='/contact'>Contact</Link>
+                    </li>
                     <li>Cart</li>
                     <button className='login-btn' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
