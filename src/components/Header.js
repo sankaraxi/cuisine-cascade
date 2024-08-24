@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.png';
 const Header = () => {
-    const [btnvalue,setBtnValue] = useState('Login');
+    const [btnValue,setBtnValue] = useState('Login');
 
     return (
         <div className='header'>
@@ -15,9 +15,8 @@ const Header = () => {
                     <li>Contact</li>
                     <li>Cart</li>
                     <button className='login-btn' onClick={()=>{
-                        const newBtnvalue = 'Logout';
-                        setBtnValue(newBtnvalue);
-                    }}>{btnvalue}</button>
+                        btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
+                    }}>{btnValue}</button>
                 </ul>
             </div>
         </div>

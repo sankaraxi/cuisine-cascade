@@ -147,15 +147,15 @@ const Body = () => {
         const json = await data.json();
         console.log(json);
         //optional chaining operator
-        setListOfRestaurants(json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
 
 // conditional rendering
 
-    // if (listOfRestaurants.length === 0) {
-    //     return <Shimmer />;
-    // }
+    if (listOfRestaurants.length === 0) {
+        return <Shimmer />;
+    }
     
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='body'>
