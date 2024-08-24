@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
-import { useState } from "react";
-
+// import resList from "../utils/mockData"; // not using this anymore
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 
 //not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
@@ -13,7 +13,7 @@ const Body = () => {
     // javascript utility function given by react
     // two important react hooks - useState, useEffect
 
-    const [listOfRestaurants, setListOfRestaurants] = useState(resList); // local state variable 
+    const [listOfRestaurants, setListOfRestaurants] = useState([]); // local state variable 
 
 //     const [listOfRestaurants, setListOfRestaurants] = useState([
 //         {
@@ -134,8 +134,30 @@ const Body = () => {
       
 //     }
 // }]
+
+// useEffect(() => {}, []); // empty array means it will run only once when the component is mounted 
+
+    useEffect(() => {
+        fetchData();    
+    },[]); 
+
+
+    const fetchData = async () => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.084887052121998&lng=76.99808970093727&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log(json);
+        //optional chaining operator
+        setListOfRestaurants(json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
+
+
+// conditional rendering
+
+    // if (listOfRestaurants.length === 0) {
+    //     return <Shimmer />;
+    // }
     
-    return (
+    return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='body'>
             <div className='filter'>
                 <button className="filter-btn" onClick={() => {

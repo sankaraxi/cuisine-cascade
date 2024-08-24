@@ -21,6 +21,14 @@
     margin: 10px ;
 }
 
+.login-btn{
+    padding: 0px 15px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: bisque;
+    cursor: pointer;
+}
+
 .search-bar{
     padding: 10px;
 }
@@ -55,4 +63,20 @@
 .filter-btn{
     margin: 10px;
     cursor: pointer;
+}
+
+.shimmer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.shimmer-card{
+    background-color: #f0f0f0;
+    margin: 5px;
+    width: 250px;
+    height: 350px;
+    padding: 10px;
+    border-radius: 5px;
 }
