@@ -3,7 +3,7 @@
     justify-content: space-between;
     border: 1px solid black;
 }
-
+ 
 .logo {
     padding: 0px 30px;
     width: 180px;
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.search-bar{
+.search-container{
     padding: 10px;
 }
 
@@ -60,6 +60,11 @@
     
 }
 
+.filter{
+    display: flex;
+    justify-content: center;
+}
+
 .filter-btn{
     margin: 10px;
     cursor: pointer;
@@ -80,3 +85,10 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+.no-restaus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
