@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/mockData"; // not using this anymore
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 //not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
@@ -191,7 +192,7 @@ const Body = () => {
             <div className='restau-container'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
-                    <RestaurantCard key ={restaurant.info.id} resData={restaurant} />
+                    <Link to={'/restaurants/'+restaurant.info.id}><RestaurantCard key ={restaurant.info.id} resData={restaurant} /></Link>
                   ))} 
                 
                 {/* this not a good apporach  */}
