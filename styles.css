@@ -98,11 +98,18 @@
   }
 
   .user-card{
-    width: 250px;
+    display: flex;
+    width: 100%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px 10px 0 0;
+  }
+
+  .avatar{
+    width: 250px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .card-container{
