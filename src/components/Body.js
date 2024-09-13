@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 //not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
@@ -157,6 +158,13 @@ const Body = () => {
         //optional chaining operator
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFileteredListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
+
+
+    const onlineStatus = useOnlineStatus();
+
+    if (!onlineStatus) {
+        return <h1 className="offline">You are offline!!! Please check your connection!</h1>;
     }
 
 
