@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
     const {name, cuisines, costForTwo, avgRating, cloudinaryImageId} = resData?.info;
     const {deliveryTime} = resData?.info.sla;
     return (
-        <div className='res-card m-4 p-4 w-[300px] rounded-lg' style={styleCard}>
+        <div className='res-card m-4 p-4 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200'>
             <img 
                 className='res-logo w-full h-[150px] object-cover object-center rounded-lg' 
                 src={CDN_URL + cloudinaryImageId} 
