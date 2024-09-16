@@ -17,8 +17,6 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 // on demand loading
  const CascadeMart = lazy(() => import('./components/CascadeMart'));
 
-
-
 /** Basic Plan
  * Header 
  *  - Logo

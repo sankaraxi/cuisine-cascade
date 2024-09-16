@@ -175,12 +175,15 @@ const Body = () => {
     // }
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='body'>
-            <div className='filter'>
-                <div className="search-container">  
-                    <input type="text" className="search-box" placeholder="Search for restaurants" value={searchText} onChange={(event)=>{
+            <div className='filter flex items-center justify-center'>
+                <div className="m-4 p-4">  
+                    <input 
+                        type="text" 
+                        className="border border-solid border-gray-300 rounded-md" 
+                        placeholder="Search for restaurants" value={searchText} onChange={(event)=>{
                         setSearchText(event.target.value);
                     }}/>
-                    <button className="search-btn" onClick={() => {
+                    <button className="bg-orange-300 px-4 rounded-md mx-2" onClick={() => {
                         console.log(searchText);
 
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) => 
@@ -191,13 +194,19 @@ const Body = () => {
                     }}>Search</button>
                 </div>
 
-                <button className="filter-btn" onClick={() => {
-                    const filteredRestaurants = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4.3);
-                    setFileteredListOfRestaurants(filteredRestaurants);
-                }}>Top Rated Restaurants</button>
+                <div className="my-4 py-4">
+                    <button className="filter-btn bg-slate-300 px-4 rounded-md mx-2" 
+                            onClick={() => {
+                                const filteredRestaurants = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4.3);
+                                setFileteredListOfRestaurants(filteredRestaurants);
+                    }}>Top Rated Restaurants</button>
+
+                </div>
+
+                
                 
             </div>
-            <div className='restau-container'>
+            <div className='restau-container flex flex-wrap justify-between m-14'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
                     <Link to={'/restaurants/'+restaurant.info.id}><RestaurantCard key ={restaurant.info.id} resData={restaurant} /></Link>
