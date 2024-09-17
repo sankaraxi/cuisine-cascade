@@ -1,4 +1,5 @@
 import Shimmer from "./Shimmer";
+import RestaurantCategory from "./RestaurantCategory";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -37,7 +38,13 @@ const RestaurantMenu = () => {
     } = resInfo?.data?.cards?.[2]?.card?.card?.info;
 
     const {itemCards} = resInfo?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card;
-    console.log(itemCards);
+    console.log(itemCards); 
+
+    const categories = resInfo?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (cardC) => cardC.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+    );
+
+    console.log(categories);
 
     return(
         <div className="mx-56  my-7">
@@ -55,7 +62,18 @@ const RestaurantMenu = () => {
                 <p className="font-montserrat text-md">{costForTwoMessage}</p>
             </div>
            
-
+            {
+                categories.map((mainCategory) => (
+                    <div key={mainCategory.card.card.title} className="bg-transparent shadow-lg my-10 p-5 rounded-md">
+                        <h4 className="font-palanquin font-bold text-3xl">{mainCategory.card.card.title}</h4>
+                        {
+                            mainCategory.card.card.categories.map((subCategory) => (
+                            <RestaurantCategory key={mainCategory.id} data={subCategory}/>
+                            ))
+                        }
+                    </div>
+                ))
+            }
 
             <ul>
                 {/* <li>{itemCards[0].card.info.name}</li>
