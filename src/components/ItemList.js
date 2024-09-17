@@ -12,15 +12,16 @@ const ItemList = ({items}) => {
                 className="bg-slate-100 rounded-lg p-3 my-3 hover:bg-slate-200 cursor-pointer" 
                 key={item.card.info.id}
             >
-                <div className="flex relative p-2">
-                    <img className="w-56 h-56 object-cover object-center rounded-lg"
+                <div className="flex relative p-2"> 
+                    <img className="w-3/12 h-56 object-cover object-center rounded-lg"
                         src={CDN_URL + item.card.info.imageId}
                         alt="food-item"
-                    /> 
+                    />
+                     
 
-                    <div className="flex flex-col m-4 p-4 justify-center">
+                    <div className="w-9/12 flex flex-col m-4 p-4 justify-center">
                         <h2 className="text-3xl font-poppins font-semibold">{item.card.info.name}</h2>
-                        <h4 className="text-lg font-palanquin ">{'\u20B9'} {item.card.info.price / 100}</h4>
+                        <h4 className="text-lg font-palanquin ">{'\u20B9'} {item.card.info.price ?  item.card.info.price / 100 : item.card.info.defaultPrice /100}</h4>
                         <p className='font-poppins text-md pt-7'>
                             {item.card.info.description}
                         </p>
