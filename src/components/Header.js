@@ -8,12 +8,12 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div className='flex justify-between bg-blue-50 shadow-lg mx-2'>
+        <div className='flex justify-between bg-blue-50 shadow-lg px-14 py-2'>
             <div className='logo-container'>
                 <img className='w-[185px]' src={logo} alt='logo' />
             </div>
             <div className='flex items-center'>
-                <ul className='flex p-4 m-4' >
+                <ul className='flex p-4 m-4 font-poppins font-[500]' >
                     {/* <li>
                         Online Status : {onlineStatus ? '🌝' : '🌑'}
                     </li> */}
@@ -31,7 +31,7 @@ const Header = () => {
                         <Link to='/grocery'>CascadeMart</Link>
                     </li>
                     <li className='px-4'>Cart</li>
-                    <button className='login-btn' onClick={()=>{
+                    <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
                     }}>{btnValue}</button>
                 </ul>

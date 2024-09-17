@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
     const {name, cuisines, costForTwo, avgRating, cloudinaryImageId} = resData?.info;
     const {deliveryTime} = resData?.info.sla;
     return (
-        <div className='res-card m-4 p-4 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200'>
+        <div className='res-card m-4 p-4 w-[300px] h-[400px] rounded-lg bg-gray-100 hover:bg-gray-200 relative'>
             <img 
                 className='res-logo w-full h-[150px] object-cover object-center rounded-lg' 
                 src={CDN_URL + cloudinaryImageId} 
@@ -20,10 +20,12 @@ const RestaurantCard = (props) => {
 
             <div className="mt-2">
                 <h3 className="font-bold font-poppins py-2 text-lg">{name}</h3>
-                <h4 className="font-palanquin">{cuisines.join(', ')}</h4>  
-                <h4 className="font-palanquin">{costForTwo}</h4>
-                <h4 className="font-palanquin">{avgRating} stars</h4>
-                <h4 className="font-palanquin">{deliveryTime} mintues</h4>
+                <h4 className="font-palanquin py-1">{cuisines.slice(0, 5).join(', ')}</h4>
+                <h4 className="font-palanquin py-1 font-semibold">{costForTwo}</h4>
+                <h4 className="font-palanquin py-1"><span className="font-bold">{avgRating}</span> stars</h4>
+                <div className="absolute right-5 bottom-5">
+                    <h4 className="font-palanquin"><span className="font-bold">{deliveryTime}</span> mintues</h4>
+                </div>
             </div>
             
         </div>

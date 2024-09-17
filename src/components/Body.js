@@ -206,7 +206,7 @@ const Body = () => {
                 
                 
             </div>
-            <div className='restau-container flex flex-wrap justify-between m-14'>
+            <div className='restau-container flex flex-wrap justify-between mx-14 my-2'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
                     <Link to={'/restaurants/'+restaurant.info.id}><RestaurantCard key ={restaurant.info.id} resData={restaurant} /></Link>
