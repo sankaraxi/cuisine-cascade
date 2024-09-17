@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 // import resList from "../utils/mockData"; // not using this anymore
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -19,7 +19,9 @@ const Body = () => {
     const [filteredListOfRestaurants, setFileteredListOfRestaurants] = useState([]); // local state variable for filtered list of restaurants
     const [searchText, setSearchText] = useState(''); // local state variable for search text
 
-    console.log("Body rendered"); // whenever a state variable changes, the component re-renders 
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard); // higher order component
+
+    console.log("Body rendered",listOfRestaurants); // whenever a state variable changes, the component re-renders 
 
 //     const [listOfRestaurants, setListOfRestaurants] = useState([
 //         {
@@ -175,6 +177,7 @@ const Body = () => {
     // }
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='body'>
+
             <div className='filter flex items-center justify-center'>
                 <div className="m-4 p-4">  
                     <input 
@@ -201,15 +204,18 @@ const Body = () => {
                                 setFileteredListOfRestaurants(filteredRestaurants);
                     }}>Top Rated Restaurants</button>
 
-                </div>
-
-                
-                
+                </div>   
             </div>
+
+
             <div className='restau-container flex flex-wrap justify-between mx-14 my-2'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
-                    <Link to={'/restaurants/'+restaurant.info.id}><RestaurantCard key ={restaurant.info.id} resData={restaurant} /></Link>
+                    <Link to={'/restaurants/'+restaurant.info.id}>
+                        {
+                            restaurant.info.avgRating < 4.2  ? <RestaurantCardPromoted key ={restaurant.info.id} resData={restaurant} /> : <RestaurantCard key ={restaurant.info.id} resData={restaurant} />
+                        }
+                    </Link>
                   ))} 
                 
                 {/* this not a good apporach  */}
