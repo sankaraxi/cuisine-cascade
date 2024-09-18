@@ -1,4 +1,4 @@
-import React , {lazy, Suspense} from 'react';
+import React , {lazy, Suspense,useEffect,useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -8,6 +8,7 @@ import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 // import CascadeMart from './components/CascadeMart';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import UserContext from './utils/UserContext';
 
 
 //chunking
@@ -34,9 +35,21 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
  *  - address
  */
 const AppLayout = () => {
+    const [userInfo, setUserInfo] = useState(null);
+    // authenticaion code
+    useEffect(() => {
+        const data = {
+            name: 'Sankar',
+        };
+ 
+        setUserInfo(data.name);
+    }, []);
+
     return (
         <div className='app'>
+            <UserContext.Provider value={{loggedInUser: userInfo}}>
             <Header />
+            </UserContext.Provider>
             <Outlet />
         </div>
     );
