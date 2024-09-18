@@ -4,10 +4,11 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import ItemList from './ItemList';
 import { useState } from 'react';
 
-const RestaurantCategory = ({data}) => {
+const RestaurantCategory = ({data,showItem,setShowIndex}) => {
 
   const [showItems, setShowItems] = useState(false);
   const clickHandle = () => {
+    // setShowIndex();
     setShowItems(!showItems);
   }
 

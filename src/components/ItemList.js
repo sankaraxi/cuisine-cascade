@@ -27,11 +27,11 @@ const ItemList = ({items}) => {
                         </p>
                     </div>
 
-                    <div className="">
+                    <div className="" key={item.card.info.id}>
                         <h4 
                             className={`absolute right-0 top-0 ${item.card.info.itemAttribute.vegClassifier === "VEG" ? "text-green-600" : "text-red-700"}`}>
                                 
-                            <FontAwesomeIcon icon={faCircleStop} />
+                            <FontAwesomeIcon  icon={faCircleStop} />
                         </h4>
                     </div>
                             

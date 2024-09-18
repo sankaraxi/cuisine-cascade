@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import {useState, useEffect } from "react";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantMenu = () => {
 
     // const [resInfo, setResInfo] = useState(null);
-
+    const [showIndex, setShowIndex] = useState(0);
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to top
       }, []);
@@ -53,7 +53,7 @@ const RestaurantMenu = () => {
         (cardC) => cardC.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-    console.log(categories2);
+    console.log(categories2);   
 
     return(
         <div className="mx-56  my-7">
@@ -74,8 +74,14 @@ const RestaurantMenu = () => {
 
             <div className="bg-transparent shadow-lg my-3 p-5 rounded-md">
                 {
-                    categories2.map((mainCategory) => (
-                        <RestaurantCategory key={mainCategory.card.card.title} data={mainCategory.card.card}/>
+                    categories2.map((mainCategory , index) => (
+
+                        <RestaurantCategory  // controlled component
+                            key={mainCategory.card.card.title} 
+                            data={mainCategory.card.card}
+                            showItems={index === showIndex ? true : false}
+                            setShowIndex = {()=> setShowIndex(index)}
+                        />
                     ))
                 }
             </div>
