@@ -1,9 +1,10 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 // import resList from "../utils/mockData"; // not using this anymore
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from '../utils/UserContext';
 
 
 //not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
@@ -18,6 +19,7 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]); // local state variable for list of restaurants
     const [filteredListOfRestaurants, setFileteredListOfRestaurants] = useState([]); // local state variable for filtered list of restaurants
     const [searchText, setSearchText] = useState(''); // local state variable for search text
+    const {loggedInUser , setUserInfo} = useContext(UserContext); // context variable
 
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard); // higher order component
 
@@ -235,6 +237,19 @@ const Body = () => {
                 <RestaurantCard resData={resList[13]} /> 
                 <RestaurantCard resData={resList[19]} /> */}
             </div>
+
+            <div className='filter flex items-center justify-center bg-gray-100'>
+                <div className="m-4 p-4">  
+                    <input 
+                        type="text" 
+                        className="border border-solid border-gray-300 rounded-md"
+                        value={loggedInUser} 
+                        onChange={(event)=> setUserInfo(event.target.value)}/>
+                </div>
+            </div>
+            
+            
+            
         </div>
     );
 };

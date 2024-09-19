@@ -1,6 +1,7 @@
 import { CDN_URL } from '../utils/constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleStop } from '@fortawesome/free-regular-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ItemList = ({items}) => {
     
@@ -32,6 +33,14 @@ const ItemList = ({items}) => {
                             className={`absolute right-0 top-0 ${item.card.info.itemAttribute.vegClassifier === "VEG" ? "text-green-600" : "text-red-700"}`}>
                                 
                             <FontAwesomeIcon  icon={faCircleStop} />
+                        </h4>
+                    </div>
+
+                    <div className="" key={item.card.info.id}>
+                        <h4 
+                            className={` text-lg absolute left-0 bottom-0 text-white bg-black rounded-full w-7 h-7 text-center`}>
+                                
+                            <FontAwesomeIcon icon={faPlus} />
                         </h4>
                     </div>
                             
