@@ -16,10 +16,11 @@ const Header = () => {
     const {loggedInUser} = useContext(UserContext);
 
     //subscribing to the store using selector
+    const cartItems = useSelector((store) => store.cart.items);
 
 
     return (
-        <div className='flex justify-between bg-blue-50 shadow-lg px-14 py-2'>
+        <div className='flex  justify-between bg-blue-50 shadow-lg px-14 py-2'>
             <div className='logo-container'>
                 <img className='w-[185px]' src={logo} alt='logo' />
             </div>
@@ -42,7 +43,7 @@ const Header = () => {
                         <Link to='/grocery'>CascadeMart</Link>
                     </li>
                     <li className='px-4'>
-                       <h1 className='font-bold'><span><FontAwesomeIcon icon={faCartShopping} /></span> 0</h1>
+                       <h1 className='font-bold'><span><FontAwesomeIcon icon={faCartShopping} /></span> {cartItems.length}</h1>
                     </li>
                     <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator

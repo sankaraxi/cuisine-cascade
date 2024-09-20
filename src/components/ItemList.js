@@ -4,6 +4,10 @@ import { faCircleStop } from '@fortawesome/free-regular-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ItemList = ({items}) => {
+
+  const handleAddItems = () => {
+    
+  }
     
   return (
     <div>
@@ -30,7 +34,8 @@ const ItemList = ({items}) => {
 
                     <div className="" key={item.card.info.id}>
                         <h4 
-                            className={`absolute right-0 top-0 ${item.card.info.itemAttribute.vegClassifier === "VEG" ? "text-green-600" : "text-red-700"}`}>
+                            className={`absolute right-0 top-0 ${item.card.info.itemAttribute.vegClassifier === "VEG" ? "text-green-600" : "text-red-700"}`}
+                        >
                                 
                             <FontAwesomeIcon  icon={faCircleStop} />
                         </h4>
@@ -39,8 +44,11 @@ const ItemList = ({items}) => {
                   
                 </div>
                   
-                <button className="absolute left-1 bottom-3 border border-solid border-transparent bg-orange-100 text-black p-2 ml-2 rounded-lg" key={item.card.info.id}>
-                        <div className=''>
+                <button 
+                    className="absolute left-1 bottom-3 border border-solid border-transparent bg-orange-100 text-black p-2 ml-2 rounded-lg" key={item.card.info.id}
+                    onClick={handleAddItems}
+                    >
+                        <div className='' >
                             <h4>
                                 Add <span> <FontAwesomeIcon icon={faPlus} /></span>
                             </h4>
