@@ -12,6 +12,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import UserContext from './utils/UserContext';
 import appStore from './utils/appStore';
+import Cart from './components/Cart';
 
 
 
@@ -88,6 +89,10 @@ const appRouter = createBrowserRouter([
                     <Suspense fallback = {<h1>loading....</h1>}>
                         <CascadeMart />
                     </Suspense>)
+            },
+            {
+                path: '/cart',
+                element: <Cart />
             },
             {
                 path: '/restaurants/:resID',

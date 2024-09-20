@@ -43,7 +43,11 @@ const Header = () => {
                         <Link to='/grocery'>CascadeMart</Link>
                     </li>
                     <li className='px-4'>
-                       <h1 className='font-bold'><span><FontAwesomeIcon icon={faCartShopping} /></span> {cartItems.length}</h1>
+                       <Link to='/cart'>
+                            <h1 className='font-bold'>
+                                <span><FontAwesomeIcon icon={faCartShopping} /></span> {cartItems.length}
+                            </h1>
+                        </Link>
                     </li>
                     <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator

@@ -2,11 +2,15 @@ import { CDN_URL } from '../utils/constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleStop } from '@fortawesome/free-regular-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import {addItem} from '../utils/slices/cartSlice'
 
 const ItemList = ({items}) => {
-
-  const handleAddItems = () => {
     
+  const dispatch = useDispatch();
+
+  const handleAddItems = (item) => {
+    dispatch(addItem(item));
   }
     
   return (
@@ -46,7 +50,7 @@ const ItemList = ({items}) => {
                   
                 <button 
                     className="absolute left-1 bottom-3 border border-solid border-transparent bg-orange-100 text-black p-2 ml-2 rounded-lg" key={item.card.info.id}
-                    onClick={handleAddItems}
+                    onClick={() => handleAddItems(item)}
                     >
                         <div className='' >
                             <h4>
