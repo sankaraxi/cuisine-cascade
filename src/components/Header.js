@@ -5,12 +5,18 @@ import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
+
 
 const Header = () => {
     const [btnValue,setBtnValue] = useState('Login');
 
     const onlineStatus = useOnlineStatus();
     const {loggedInUser} = useContext(UserContext);
+
+    //subscribing to the store using selector
+
 
     return (
         <div className='flex justify-between bg-blue-50 shadow-lg px-14 py-2'>
@@ -35,7 +41,9 @@ const Header = () => {
                     <li className='px-4'>
                         <Link to='/grocery'>CascadeMart</Link>
                     </li>
-                    <li className='px-4'>Cart</li>
+                    <li className='px-4'>
+                       <h1 className='font-bold'><span><FontAwesomeIcon icon={faCartShopping} /></span> 0</h1>
+                    </li>
                     <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
                     }}>{btnValue}</button>

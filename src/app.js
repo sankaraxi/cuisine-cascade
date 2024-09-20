@@ -6,9 +6,13 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
+import {provider} from 'react-redux';
 // import CascadeMart from './components/CascadeMart';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import {Provider} from 'react-redux';
 import UserContext from './utils/UserContext';
+import appStore from './utils/appStore';
+
 
 
 //chunking
@@ -46,6 +50,7 @@ const AppLayout = () => {
     }, []);
 
     return (
+        <Provider store={appStore}>
         <UserContext.Provider value={{loggedInUser: userInfo, setUserInfo}}>
             <div className='app'>
                 
@@ -54,6 +59,7 @@ const AppLayout = () => {
                 <Outlet />
             </div>
         </UserContext.Provider>
+        </Provider>
     );
 };
 

@@ -10,7 +10,7 @@ const ItemList = ({items}) => {
 
         {items.map((item) => (
             <div
-                className="bg-slate-100 rounded-lg p-3 my-3 hover:bg-slate-200 cursor-pointer" 
+                className=" relative  bg-slate-100 rounded-lg p-3 my-3 hover:bg-slate-200 cursor-pointer" 
                 key={item.card.info.id}
             >
                 <div className="flex relative p-2"> 
@@ -36,16 +36,18 @@ const ItemList = ({items}) => {
                         </h4>
                     </div>
 
-                    <div className="" key={item.card.info.id}>
-                        <h4 
-                            className={` text-lg absolute left-0 bottom-0 text-white bg-black rounded-full w-7 h-7 text-center`}>
-                                
-                            <FontAwesomeIcon icon={faPlus} />
-                        </h4>
-                    </div>
-                            
+                  
                 </div>
-            </div>
+                  
+                <button className="absolute left-1 bottom-3 border border-solid border-transparent bg-orange-100 text-black p-2 ml-2 rounded-lg" key={item.card.info.id}>
+                        <div className=''>
+                            <h4>
+                                Add <span> <FontAwesomeIcon icon={faPlus} /></span>
+                            </h4>
+                        </div>    
+                </button>  
+                
+            </div>  
         ))}
 
 
