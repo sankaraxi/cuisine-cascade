@@ -20,15 +20,15 @@ const Header = () => {
 
 
     return (
-        <div className='flex  justify-between bg-blue-50 shadow-lg px-14 py-2'>
+        <div className='flex justify-between bg-blue-50 shadow-lg px-14 py-2'>
             <div className='logo-container'>
                 <img className='w-[185px]' src={logo} alt='logo' />
             </div>
             <div className='flex items-center'>
-                <ul className='flex p-4 m-4 font-poppins font-[500]' >
+                <ul className='max-sm:hidde flex p-4 m-4 font-poppins font-[500]' >
                     {/* <li>
                         Online Status : {onlineStatus ? '🌝' : '🌑'}
-                    </li> */}
+                    </li> */}   
                     <li className='px-4'>
                         <Link to='/'>Home</Link>
                     </li>
@@ -44,7 +44,7 @@ const Header = () => {
                     </li>
                     <li className='px-4'>
                        <Link to='/cart'>
-                            <h1 className='font-bold'>
+                            <h1 className='font-bold w-11 text-center'>
                                 <span><FontAwesomeIcon icon={faCartShopping} /></span> {cartItems.length}
                             </h1>
                         </Link>
