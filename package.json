@@ -27,6 +27,11 @@
   },
   "homepage": "https://github.com/sankaraxi/cusine-cascade#readme",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@testing-library/react": "^16.0.1",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
     "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "process": "^0.11.10",
