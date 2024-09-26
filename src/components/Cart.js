@@ -19,19 +19,19 @@ const Cart = () => {
         dispatch(clearCart());
     }
     return (
-        <div className="mx-56  my-7">
-            <div className="m-[2px] p-[2px]">
+        <div className="pt-[80px] mx-10 sm:mx-56 sm:my-7 overflow-y-auto">
+            <div className="m-2 p-2 sm:m-3 sm:p-3">
                 <h1 className="text-4xl font-poppins font-bold text-center">My Cart</h1>
             </div>
-            <div className="my-1 flex justify-between">
-                <h4 className="font-palanquin"><span className="font-bold">{cartItems.length}</span> Items</h4>
+            <div className="my-1 flex justify-between items-center">
+                <h4 className="font-palanquin text-lg"><span className="font-bold">{cartItems.length}</span> Items</h4>
                 <button className="border border-solid text-white font-bold bg-black p-1 rounded-lg"
                         onClick={handleClearCart}>
                     <h4>Empty <span><FontAwesomeIcon icon={faCartShopping} /></span></h4>
                 </button>
             </div>
-            <div>
-                {cartItems.length === 0 && <h1 className="text-md font-poppins text-center">Cart is Empty. Please add items.</h1>}
+            <div className="items-center pt-36">
+                {cartItems.length === 0 && <h1 className="text-md font-poppins text-center font-semibold">Cart is Empty. Please add items.</h1>}
                 <ItemList items={cartItems} />
             </div>
         </div>

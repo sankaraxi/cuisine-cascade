@@ -181,9 +181,9 @@ const Body = () => {
     //     return <Shimmer />;
     // }
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
-        <div className='body'>
+        <div className='pt-[80px]'>
 
-            <div className='filter flex items-center justify-center'>
+            <div className='filter sm:flex items-center justify-center m-2 p-2'>
                 <div className="m-4 p-4">  
                     <input 
                         type="text" 
