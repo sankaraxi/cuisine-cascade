@@ -183,15 +183,15 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='pt-[80px]'>
 
-            <div className='filter sm:flex items-center justify-center m-2 p-2'>
-                <div className="m-4 p-4">  
+            <div className='filter flex max-sm:flex-col items-center justify-center m-2 p-2 mx-5'>
+                <div className="flex justify-center mt-2 pt-2 sm:m-4 sm:p-4 max-sm:w-full font-palanquin font-semibold">  
                     <input 
                         type="text" 
-                        className="border border-solid border-gray-300 rounded-md" 
+                        className="border px-2 max-sm:py-1 border-solid border-gray-300 rounded-md max-sm:w-5/6" 
                         placeholder="Search for restaurants" value={searchText} onChange={(event)=>{
                         setSearchText(event.target.value);
                     }}/>
-                    <button className="bg-orange-300 px-4 rounded-md mx-2" onClick={() => {
+                    <button className="bg-orange-300 px-4 rounded-md mx-2 ring-2 max-sm:w-1/4" onClick={() => {
                         console.log(searchText);
 
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) => 
@@ -202,8 +202,8 @@ const Body = () => {
                     }}>Search</button>
                 </div>
 
-                <div className="my-4 py-4">
-                    <button className="filter-btn bg-slate-300 px-4 rounded-md mx-2" 
+                <div className=" flex justify-center mt-1 pt-2 sm:my-4 sm:py-4 max-sm:w-full">
+                    <button className="filter-btn bg-yellow-100 ring-2 px-4 rounded-md sm:mx-2 font-palanquin font-semibold" 
                             onClick={() => {
                                 const filteredRestaurants = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4.3);
                                 setFileteredListOfRestaurants(filteredRestaurants);
@@ -213,7 +213,7 @@ const Body = () => {
             </div>
 
 
-            <div className='restau-container flex flex-wrap justify-between mx-14 my-2'>
+            <div className='restau-container flex flex-wrap justify-center sm:justify-between sm:mx-14 sm:my-2'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
                     <Link to={'/restaurants/'+restaurant.info.id}>

@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faBurger } from '@fortawesome/free-solid-svg-icons'; // or faHamburger in older versions
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 
 
 const Header = () => {
     const [btnValue,setBtnValue] = useState('Login');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const onlineStatus = useOnlineStatus();
     const {loggedInUser} = useContext(UserContext);
@@ -37,8 +39,46 @@ const Header = () => {
                                 </h1>
                         </Link>
 
-                        <FontAwesomeIcon icon={faBurger} />
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                            <FontAwesomeIcon icon={faBurger} />
+                        </button>
                     </div>    
+            </div>
+
+
+            <div
+                className={`fixed  top-0 right-0 w-2/4 h-full bg-red-100 z-30 transform transition-transform duration-300 ${
+                    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                } sm:hidden`}
+            >
+                <div className="flex flex-col pt-[80px] h-full space-y-1">
+                    
+                    <button className='absolute top-0 right-0 p-3 m-3 mr-5' 
+                        onClick={() =>{setIsMenuOpen(false);
+                    }}>
+                        <FontAwesomeIcon icon={faXmark} className='w-5 h-5 p-1 text-white bg-black rounded-full' />
+                    </button>
+
+                    <div className='px-4 text-lg flex'>
+                        <span className='px-1'><FontAwesomeIcon icon={faUser} /></span>
+                        <span className='px-1 font-bold'>{loggedInUser}</span>
+                    </div>
+                    
+                    <Link className="px-4 pt-3 text-lg font-semibold font-poppins" to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                    <Link className="px-4 pt-3 text-lg font-semibold font-poppins" to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+                    <Link className="px-4 pt-3 text-lg font-semibold font-poppins" to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                    <Link className="px-4 pt-3 text-lg font-semibold font-poppins" to="/grocery" onClick={() => setIsMenuOpen(false)}>CascadeMart</Link>
+                    <Link className="px-4 pt-3 text-lg font-semibold font-poppins" to="/cart" onClick={() => setIsMenuOpen(false)}>Cart ({cartItems.length})</Link>
+                    {/* <button
+                        className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0'
+                        onClick={() => {
+                            setBtnValue(btnValue === 'Login' ? 'Logout' : 'Login');
+                        }}
+                    >
+                        {btnValue}
+                    </button> */}
+                    
+                </div>
             </div>
 
             <ul className='max-sm:hidden flex p-4 m-4 font-poppins font-[500]' >
