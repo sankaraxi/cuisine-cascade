@@ -56,7 +56,7 @@ const RestaurantMenu = () => {
     console.log(categories2);   
 
     return(
-        <div className="mx-56  my-7">
+        <div className="pt-[80px] mx-4 my-6 sm:mx-56  sm:my-9">
             <h1 className="text-center font-palanquin font-bold text-4xl">{name}</h1>
             <div className="flex justify-center items-center mt-1">
                 <div className="mr-2">
@@ -72,7 +72,7 @@ const RestaurantMenu = () => {
             </div>
             
 
-            <div className="bg-transparent shadow-lg my-3 p-5 rounded-md">
+            <div className="bg-transparent shadow-lg sm:my-3 sm:p-5 rounded-md">
                 {
                     categories2.map((mainCategory , index) => (
 
@@ -88,8 +88,8 @@ const RestaurantMenu = () => {
            
             {
                 categories.map((mainCategory) => (
-                    <div key={mainCategory.card.card.title} className="bg-transparent shadow-lg my-10 p-5 rounded-md">
-                        <h4 className="font-palanquin font-bold text-3xl">{mainCategory.card.card.title}</h4>
+                    <div key={mainCategory.card.card.title} className="bg-transparent shadow-lg my-4 p-3 sm:my-10 sm:p-5 rounded-md">
+                        <h4 className="font-palanquin font-bold text-xl sm:text-3xl">{mainCategory.card.card.title}</h4>
                         {
                             mainCategory.card.card.categories.map((subCategory) => (
                             <RestaurantCategory key={subCategory.title} data={subCategory}/>

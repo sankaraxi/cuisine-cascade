@@ -16,14 +16,14 @@ const RestaurantCategory = ({data,showItem,setShowIndex}) => {
     <div>
         {/* Accordian Header */}
         <div 
-          className='flex justify-between items-center w-full h-16 bg-orange-100 shadow-lg my-3 px-8 rounded-md cursor-pointer'
+          className='flex justify-between items-center w-full h-9 sm:h-16 bg-orange-100 shadow-lg my-1 px-4 sm:my-3 sm:px-8 rounded-md cursor-pointer'
           onClick={clickHandle}
         >
-                <span className='font-semibold font-poppins text-xl'>{data.title} ({data.itemCards.length})</span>
+                <span className='font-semibold font-poppins text-md sm:text-xl'>{data.title} ({data.itemCards.length})</span>
                 <span><FontAwesomeIcon icon={showItems ? faAngleUp : faAngleDown} /></span> 
         </div>
          
-        {showItems && <div className='mx-5'>
+        {showItems && <div className='sm:mx-5'>
           <ItemList items={data.itemCards} />
         </div>}
         
