@@ -189,11 +189,11 @@ const Body = () => {
                 <div className="flex justify-center mt-2 pt-2 sm:p-4 sm:w-6/12 w-full sm:h-[70px] font-palanquin font-semibold">  
                     <input 
                         type="text" 
-                        className="border px-2 max-sm:py-1 border-solid border-gray-300 rounded-md w-5/6 sm:w-4/6" 
+                        className=" font-palanquin border px-2 max-sm:py-1 border-solid border-gray-300 rounded-md w-5/6 sm:w-4/6" 
                         placeholder="Search for restaurants" value={searchText} onChange={(event)=>{
                         setSearchText(event.target.value);
                     }}/>
-                    <button className="bg-orange-300 px-4 rounded-sm mx-2 w-1/4 sm:w-2/6" onClick={() => {
+                    <button className="bg-orange-300 font-palanquin px-4 rounded-sm mx-2 w-1/4 sm:w-2/6" onClick={() => {
                         // console.log(searchText);
 
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) => 
@@ -205,7 +205,7 @@ const Body = () => {
                 </div>
 
                 <div className=" flex justify-center mt-1 pt-2 sm:my-4 sm:py-4 max-sm:w-full sm:h-[70px]">
-                    <button className="filter-btn flex items-center justify-center gap-1 bg-yellow-100  px-4 rounded-sm sm:mx-2 font-palanquin font-semibold" 
+                    <button className="filter-btn font-palanquin flex items-center justify-center gap-1 bg-yellow-100  px-4 rounded-sm sm:mx-2 font-palanquin font-semibold" 
                             onClick={() => {
                                 const filteredRestaurants = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4.3);
                                 setFileteredListOfRestaurants(filteredRestaurants);

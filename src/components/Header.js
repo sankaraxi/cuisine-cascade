@@ -109,7 +109,7 @@ const Header = () => {
                         <span className='px-1'><FontAwesomeIcon icon={faUser} /></span>
                         <span className='px-1'>{loggedInUser}</span>
                     </div>
-                    <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
+                    <button className='login-btn border border-transparent bg-green-300 rounded-sm px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
                         btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
                     }}>{btnValue}</button>
                    
