@@ -247,7 +247,7 @@ const Body = () => {
                 <RestaurantCard resData={resList[19]} /> */}
             </div>
 
-            <div className='filter flex items-center justify-center bg-gray-100'>
+            {/* <div className='filter flex items-center justify-center bg-gray-100'>
                 <div className="m-4 p-4">  
                     <input 
                         type="text" 
@@ -255,7 +255,7 @@ const Body = () => {
                         value={loggedInUser} 
                         onChange={(event)=> setUserInfo(event.target.value)}/>
                 </div>
-            </div>
+            </div> */}
             
             
             

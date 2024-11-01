@@ -105,13 +105,14 @@ const Header = () => {
                             </h1>
                         </Link>
                     </li>
-                    <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
-                        btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
-                    }}>{btnValue}</button>
                     <div className='px-2 border border-solid border-black rounded-full cursor-pointer hover:bg-black hover:text-white'>
                         <span className='px-1'><FontAwesomeIcon icon={faUser} /></span>
                         <span className='px-1'>{loggedInUser}</span>
                     </div>
+                    <button className='login-btn border border-transparent bg-green-300 rounded-md px-2 mx-2 w-20 flex-shrink-0' onClick={()=>{
+                        btnValue === "Login" ? setBtnValue('Logout') : setBtnValue('Login'); // ternary operator
+                    }}>{btnValue}</button>
+                   
             </ul>
 
         

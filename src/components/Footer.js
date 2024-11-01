@@ -13,9 +13,9 @@ const Footer = () => {
         </div>
 
         <div className="mt-5 gap-3 flex flex-col text-white">
-            <div className="text-md sm:text-lg flex flex-col gap-2 w-6/12">
-                <p className="font-poppins "><span className="font-bold">Phone: </span> +91 0987654321</p>
-                <p className="font-poppins "><span className="font-bold">Email: </span> thescapadecafe@outlook.com</p>
+            <div className="text-smsm:text-lg flex flex-col gap-2">
+                <p className="font-poppins "><span className="font-bold">Phone: </span>+91 0987654321</p>
+                <p className="font-poppins "><span className="font-bold">Email: </span>thescapadecafe@outlook.com</p>
             </div>
 
             <div className='flex gap-3 justify-center sm:mt-5 text-2xl'>
