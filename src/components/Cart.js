@@ -30,7 +30,7 @@ const Cart = () => {
                     <h4>Empty <span><FontAwesomeIcon icon={faCartShopping} /></span></h4>
                 </button>
             </div>
-            <div className="items-center pt-36">
+            <div className="items-center pt-2">
                 {cartItems.length === 0 && <h1 className="text-md font-poppins text-center font-semibold">Cart is Empty. Please add items.</h1>}
                 <ItemList items={cartItems} />
             </div>
