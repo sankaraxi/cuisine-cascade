@@ -218,7 +218,7 @@ const Body = () => {
                 <h1 className="text-2xl sm:text-4xl  font-poppins font-bold text-center">Nearby Food Joints</h1>
             </div>
 
-            <div className='restau-container flex flex-wrap justify-center sm:justify-between sm:mx-40 sm:my-2'>
+            <div className='restau-container flex flex-wrap justify-center sm:justify-between sm:mx-36 sm:my-2'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
                     <Link to={'/restaurants/'+restaurant.info.id}>
