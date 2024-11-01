@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from '../utils/UserContext';
+import { RiArrowUpDownFill } from "react-icons/ri";
 
 
 //not using keys(not acceptable) <<<<<< index as key <<<<<<<< unique id  (best practice) must follow
@@ -183,15 +184,15 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className='pt-[80px]'>
 
-            <div className='filter flex max-sm:flex-col items-center justify-center m-2 p-2 mx-5'>
-                <div className="flex justify-center mt-2 pt-2 sm:m-4 sm:p-4 max-sm:w-full font-palanquin font-semibold">  
+            <div className='filter flex max-sm:flex-col items-center justify-between m-2 p-2 mx-5 sm:mx-20'>
+                <div className="flex justify-center mt-2 pt-2 sm:p-4 sm:w-6/12 w-full sm:h-[70px] font-palanquin font-semibold">  
                     <input 
                         type="text" 
-                        className="border px-2 max-sm:py-1 border-solid border-gray-300 rounded-md max-sm:w-5/6" 
+                        className="border px-2 max-sm:py-1 border-solid border-gray-300 rounded-md w-5/6 sm:w-4/6" 
                         placeholder="Search for restaurants" value={searchText} onChange={(event)=>{
                         setSearchText(event.target.value);
                     }}/>
-                    <button className="bg-orange-300 px-4 rounded-md mx-2 ring-2 max-sm:w-1/4" onClick={() => {
+                    <button className="bg-orange-300 px-4 rounded-sm mx-2 w-1/4 sm:w-2/6" onClick={() => {
                         console.log(searchText);
 
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) => 
@@ -202,12 +203,12 @@ const Body = () => {
                     }}>Search</button>
                 </div>
 
-                <div className=" flex justify-center mt-1 pt-2 sm:my-4 sm:py-4 max-sm:w-full">
-                    <button className="filter-btn bg-yellow-100 ring-2 px-4 rounded-md sm:mx-2 font-palanquin font-semibold" 
+                <div className=" flex justify-center mt-1 pt-2 sm:my-4 sm:py-4 max-sm:w-full sm:h-[70px]">
+                    <button className="filter-btn flex items-center justify-center gap-1 bg-yellow-100  px-4 rounded-sm sm:mx-2 font-palanquin font-semibold" 
                             onClick={() => {
                                 const filteredRestaurants = listOfRestaurants.filter((restaurant) => restaurant.info.avgRating > 4.3);
                                 setFileteredListOfRestaurants(filteredRestaurants);
-                    }}>Top Rated Restaurants</button>
+                    }}>Top Rated Restaurants <span><RiArrowUpDownFill/></span></button>
 
                 </div>   
             </div>
