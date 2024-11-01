@@ -1,3 +1,5 @@
+import RestaurantCardShimmer from "./RestaurantCardShimmer";
+
 // Desc: Shimmer effect for loading
 // Shimmer ui
 
@@ -17,22 +19,26 @@ const Shimmer = () => {
 
         </div>
             <div className="shimmer-wrapper flex justify-between flex-wrap mx-10 sm:mx-7 my-1 p-4">
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
-                <div className="shimmer-card shimmer-effect bg-gray-100 m-1 p-2 w-[300px] h-[400px] rounded-md"></div>
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
+                <RestaurantCardShimmer />
                 
             </div>
         </div>
