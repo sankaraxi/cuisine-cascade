@@ -34,7 +34,7 @@ class UserClass extends React.Component {
     return (
         <div className="user-card flex flex-col sm:flex-row items-center w-auto p-1 my-3 border border-slate-100 rounded-md shadow-xl"> 
             <img src={avatar_url} className='avatar w-[250px] object-cover object-center' alt="avatar" />
-            <div className='user-info flex flex-col justify-center font-poppins'>
+            <div className='user-info flex flex-col justify-center font-poppins p-1'>
                 <h3 className='py-2 text-sm sm:text-md'><span className='font-bold'>Name:</span> {name}</h3>
                 <h4 className='py-2 text-sm sm:text-md'><span className='font-bold'>Location:</span> {location}</h4>
                 <h4 className='py-2 text-sm sm:text-md'><span className='font-bold'>Role:</span> Frontend Developer</h4>
