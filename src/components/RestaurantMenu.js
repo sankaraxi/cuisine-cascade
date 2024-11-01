@@ -1,4 +1,4 @@
-import Shimmer from "./Shimmer";
+
 import RestaurantCategory from "./RestaurantCategory";
 import { useParams } from "react-router-dom";
 import {useState, useEffect } from "react";
@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faCircleStop } from '@fortawesome/free-regular-svg-icons';
 import { CDN_URL } from "../utils/constants";
+import ShimmerMenu from "./ShimmerMenu";
 // import { useState, useEffect } from 'react';
 // import { MENU_API } from "../utils/constants";
 
@@ -36,7 +37,7 @@ const RestaurantMenu = () => {
     // }
     
     if (resInfo === null) {
-        return <Shimmer />;
+        return <ShimmerMenu />;
     }
 
     const { name, cuisines, areaName, costForTwoMessage
