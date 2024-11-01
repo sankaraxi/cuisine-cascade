@@ -26,7 +26,7 @@ const Header = () => {
         <div className='fixed flex justify-between top-0 left-0 bg-red-100 w-full px-7 sm:px-14 py-2 z-20 shadow-md'>
             <div>
                 <Link href="/">
-                    <img className='w-[150px] sm:w-[185px]' src={logo} alt='logo' />
+                    <img className='w-[150px] sm:w-[190px]' src={'https://i.ibb.co/jVpsX9L/logo.png'} alt='logo' />
                 </Link>
             </div>
 
