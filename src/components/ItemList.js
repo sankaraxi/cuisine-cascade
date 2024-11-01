@@ -21,17 +21,17 @@ const ItemList = ({items}) => {
                 className=" relative  bg-slate-100 rounded-lg p-3 my-3 hover:bg-slate-200 cursor-pointer" 
                 key={item.card.info.id}
             >
-                <div className="flex flex-col items-center sm:flex-row relative p-2"> 
-                    <img className="w-48 h-48 sm:w-3/12 sm:h-56 object-cover object-center rounded-lg"
+                <div className="flex items-center flex-row relative p-2"> 
+                    <img className="w-36 h-36 sm:w-3/12 sm:h-56 object-cover object-center rounded-lg"
                         src={CDN_URL + item.card.info.imageId}
                         alt="food-item"
                     />
                      
 
                     <div className="sm:w-9/12 flex flex-col m-4 p-4 justify-center">
-                        <h2 className="text-lg sm:text-3xl font-poppins font-semibold">{item.card.info.name}</h2>
+                        <h2 className="text-md sm:text-3xl font-poppins font-semibold">{item.card.info.name}</h2>
                         <h4 className="text-md sm:text-lg font-palanquin ">{'\u20B9'} {item.card.info.price ?  item.card.info.price / 100 : item.card.info.defaultPrice /100}</h4>
-                        <p className='font-poppins text-md pt-7'>
+                        <p className='hidden sm:flex font-poppins text-md pt-7'>
                             {item.card.info.description}
                         </p>
                     </div>
@@ -53,7 +53,7 @@ const ItemList = ({items}) => {
                     onClick={() => handleAddItems(item)}
                     >
                         <div className='' >
-                            <h4>
+                            <h4 className='text-sm sm:text-lg'>
                                 Add <span> <FontAwesomeIcon icon={faPlus} /></span>
                             </h4>
                         </div>    

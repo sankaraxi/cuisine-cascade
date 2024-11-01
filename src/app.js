@@ -58,6 +58,7 @@ const AppLayout = () => {
                 <Header />
                 
                 <Outlet />
+                
             </div>
         </UserContext.Provider>
         </Provider>

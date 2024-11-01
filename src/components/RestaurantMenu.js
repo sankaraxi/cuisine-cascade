@@ -57,18 +57,20 @@ const RestaurantMenu = () => {
 
     return(
         <div className="pt-[80px] mx-4 my-6 sm:mx-56  sm:my-9">
-            <h1 className="text-center font-palanquin font-bold text-4xl">{name}</h1>
-            <div className="flex justify-center items-center mt-1">
-                <div className="mr-2">
-                    <FontAwesomeIcon icon={faLocationDot} />
+            <div className="flex flex-col justify-center items-center">
+                <h1 className="text-center font-palanquin font-bold text-3xl sm:text-4xl">{name}</h1>
+                <div className="flex justify-center items-center mt-1 text-md sm:text-xl">
+                    <div className="mr-2">
+                        <FontAwesomeIcon icon={faLocationDot} />
+                    </div>
+                    <p className="font-palanquin font-semibold ">{areaName}</p>
                 </div>
-                <p className="font-palanquin font-semibold">{areaName}</p>
             </div>
-
+            
 
             <div className="flex justify-between items-center">
-                <h2 className="font-palanquin text-xl font-semibold">{cuisines.join(', ')}</h2> 
-                <p className="font-montserrat text-md">{costForTwoMessage}</p>
+                <h2 className="font-palanquin text-lg sm:text-xl  font-semibold">{cuisines.join(', ')}</h2> 
+                <p className="font-montserrat text-lg sm:text-xl">{costForTwoMessage}</p>
             </div>
             
 
