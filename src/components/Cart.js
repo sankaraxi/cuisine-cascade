@@ -11,7 +11,7 @@ const Cart = () => {
 
     //subscribe to the store
     const cartItems = useSelector((store) => store.cart.items);
-    console.log(cartItems);
+    // console.log(cartItems);
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Cart = () => {
         dispatch(clearCart());
     }
     return (
-        <div className="pt-[80px] mx-10 sm:mx-56 sm:my-7 overflow-y-auto">
+        <div className="pt-[80px] mx-10 sm:mx-56 sm:my-7 overflow-y-auto h-screen">
             <div className="m-2 p-2 sm:m-3 sm:p-3">
                 <h1 className="text-4xl font-poppins font-bold text-center">My Cart</h1>
             </div>

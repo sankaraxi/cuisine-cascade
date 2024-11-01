@@ -20,7 +20,7 @@ const RestaurantMenu = () => {
       }, []);
 
     const {resID} = useParams();
-    console.log(resID);
+    // console.log(resID);
 
     const resInfo = useRestaurantMenu(resID);
 
@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
     } = resInfo?.data?.cards?.[2]?.card?.card?.info;
 
     const {itemCards} = resInfo?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card;
-    console.log(itemCards); 
+    // console.log(itemCards); 
 
     const categories = resInfo?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
         (cardC) => cardC.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
         (cardC) => cardC.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-    console.log(categories2);   
+    // console.log(categories2);   
 
     return(
         <div className="pt-[80px] mx-4 my-6 sm:mx-56  sm:my-9">

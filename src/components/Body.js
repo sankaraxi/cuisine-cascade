@@ -24,7 +24,7 @@ const Body = () => {
 
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard); // higher order component
 
-    console.log("Body rendered",listOfRestaurants); // whenever a state variable changes, the component re-renders 
+    // console.log("Body rendered",listOfRestaurants); // whenever a state variable changes, the component re-renders 
 
 //     const [listOfRestaurants, setListOfRestaurants] = useState([
 //         {
@@ -152,6 +152,7 @@ const Body = () => {
 // if empty dependency array is given, useeffect will run only once when the component is mounted
 
     useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to top
         fetchData();    
     },[]); 
 
@@ -162,7 +163,7 @@ const Body = () => {
         const data = await fetch("https://foodfire.onrender.com/api/restaurants?lat=11.084887052121998&lng=76.99808970093727&page_type=DESKTOP_WEB_LISTING");
 
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         //optional chaining operator
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFileteredListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -193,7 +194,7 @@ const Body = () => {
                         setSearchText(event.target.value);
                     }}/>
                     <button className="bg-orange-300 px-4 rounded-sm mx-2 w-1/4 sm:w-2/6" onClick={() => {
-                        console.log(searchText);
+                        // console.log(searchText);
 
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) => 
                             (restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()))
