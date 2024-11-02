@@ -42,7 +42,7 @@ Follow these steps to get the project running locally:
    npm start
    ```
 
-   Navigate to `http://localhost:3000` in your web browser to view the app.
+   Navigate to `http://localhost:1234` in your web browser to view the app.
 
 ## Screenshots
 
