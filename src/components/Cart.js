@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from "react-redux"
 import { clearCart } from "../utils/slices/cartSlice"
+import { useEffect } from "react";
 
 
 const Cart = () => {
@@ -15,11 +16,25 @@ const Cart = () => {
 
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        // Toggle scroll bar visibility based on cart items
+        if (cartItems.length > 0) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        // Cleanup on component unmount
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [cartItems]);
+
     const handleClearCart = () => {
         dispatch(clearCart());
     }
     return (
-        <div className="pt-[80px] mx-10 sm:mx-56 sm:my-7 overflow-y-auto h-screen">
+        <div className="pt-[80px] mx-10 sm:mx-56 sm:my-7 overflow-y-auto h-screen scrollbar-hide">
             <div className="m-2 p-2 sm:m-3 sm:p-3">
                 <h1 className="text-4xl font-poppins font-bold text-center">My Cart</h1>
             </div>
@@ -30,7 +45,7 @@ const Cart = () => {
                     <h4>Empty <span><FontAwesomeIcon icon={faCartShopping} /></span></h4>
                 </button>
             </div>
-            <div className="items-center pt-2">
+            <div className="items-center pt-2 ">
                 {cartItems.length === 0 && <h1 className="text-md font-poppins text-center font-semibold">Cart is Empty. Please add items.</h1>}
                 <ItemList items={cartItems} />
             </div>

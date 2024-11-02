@@ -182,7 +182,7 @@ const Body = () => {
     // if (listOfRestaurants.length === 0) {
     //     return <Shimmer />;
     // }
-    return listOfRestaurants.length === 0 ? <Shimmer /> : (
+    return  (
         <div className='pt-[80px]'>
 
             <div className='filter flex max-sm:flex-col items-center justify-between m-2 p-2 mx-5 sm:mx-20'>
@@ -219,8 +219,10 @@ const Body = () => {
             <div>
                 <h1 className="text-2xl sm:text-4xl  font-poppins font-bold text-center">Nearby Food Joints</h1>
             </div>
-
-            <div className='restau-container flex flex-wrap justify-center sm:justify-between sm:mx-20 sm:my-2'>
+            {
+                listOfRestaurants.length === 0 ? <Shimmer /> 
+                    :
+                    <div className='restau-container flex flex-wrap justify-center sm:justify-between sm:mx-20 sm:my-2'>
 
                 {filteredListOfRestaurants.length === 0 ?<h4 className="no-restaus">No Restaurants found</h4> : filteredListOfRestaurants.map((restaurant) => (
                     <Link to={'/restaurants/'+restaurant.info.id}>
@@ -246,7 +248,9 @@ const Body = () => {
                 <RestaurantCard resData={resList[12]} />
                 <RestaurantCard resData={resList[13]} /> 
                 <RestaurantCard resData={resList[19]} /> */}
-            </div>
+            </div> 
+            }
+            
 
             {/* <div className='filter flex items-center justify-center bg-gray-100'>
                 <div className="m-4 p-4">  

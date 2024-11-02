@@ -16,9 +16,6 @@ const RestaurantCardShimmer = () => {
                 
                 {/* Shimmer for Rating */}
                 <div className="bg-gray-300 h-4 w-1/4 rounded-md"></div> {/* Rating Shimmer */}
-
-                {/* Shimmer for Delivery Time */}
-                <div className="absolute right-5 bottom-5 bg-gray-300 h-4 w-1/3 rounded-md"></div> {/* Delivery Time Shimmer */}
             </div>
         </div>
     );
